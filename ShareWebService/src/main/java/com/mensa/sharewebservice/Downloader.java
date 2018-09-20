@@ -5,6 +5,8 @@
  */
 package com.mensa.sharewebservice;
 
+import com.mensa.sharewebservice.util.Converter;
+import com.mensa.sharewebservice.util.FileHandler;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
@@ -26,6 +28,9 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
+import javax.swing.text.html.*;  
+import javax.swing.text.html.parser.*;
+
 /**
  *
  * @author matt_
@@ -34,39 +39,37 @@ public class Downloader {
     private Logger log = LoggerFactory.getLogger(Downloader.class);
     private final String USER_AGENT = "Mozilla/5.0";
     
-    public boolean SaveToFile(String filename, String content) {
-        File file = new File(filename);
+    // <editor-fold desc="Testing Main">
+    public static void main(String[] args) {
+        String url = "https://www.hkex.com.hk/eng/stat/smstat/dayquot/d180903e.htm";
+        String filename = "C:\\Temp\\Downloader.txt";
+        Downloader downloader = new Downloader(); 
         try {
-            FileWriter fileWriter = new FileWriter(file, false);
-            fileWriter.write(content);
-            fileWriter.flush();
-            fileWriter.close();
-            return true; 
-        } catch (IOException e) { 
-            log.error(String.format("SaveToFile Error: %s", e.getMessage())); 
-            return false; 
+            FileHandler.SaveToFile(filename, downloader.GetResponseFromUrl(url)); 
+        } catch (IOException e)  {
+            e.printStackTrace();
         } 
+        /*
+        try {
+            String response = downloader.GetResponseFromUrl(url); 
+            //System.out.println(response);
+            response = Converter.ConvertHtmlToString(Converter.ConvertXmlFromString(response)); 
+            FileHandler.SaveToFile(filename, response); 
+        } catch (IOException e)  {
+            e.printStackTrace();
+        }
+*/
     }
+    // </editor-fold>
     
-    public Document ConvertXmlFromString(String xmlString) {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); 
-        DocumentBuilder builder;  
-        try {  
-            builder = factory.newDocumentBuilder();  
-            return builder.parse(new InputSource(new StringReader(xmlString))); 
-        } catch (Exception e) {  
-            //e.printStackTrace();  
-            log.error(String.format("ConvertXmlFromString Error: %s", e.getMessage())); 
-            return null; 
-        } 
-    }
+    // <editor-fold desc="Public Tools Methods">
     
-    public String GetResponseFromUrl() {
+    public String GetResponseFromUrl(String url) {
         log.debug("Start GetResponseFromUrl");
         String answer = "";
         try {
-            //String url = "https://www.hkex.com.hk/eng/stat/smstat/dayquot/d180903e.htm";
-            String url = "http://www.rthk.hk/";
+            //url = "https://www.hkex.com.hk/eng/stat/smstat/dayquot/d180903e.htm";
+            //url = "http://www.rthk.hk/";
             URL iurl = new URL(url);
             CookieHandler.setDefault(new CookieManager(null, CookiePolicy.ACCEPT_ALL));
             HttpURLConnection uc = (HttpURLConnection)iurl.openConnection();
@@ -75,14 +78,14 @@ public class Downloader {
             uc.setDoOutput(true); 
             uc.connect();
             
-            BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-            while ((inputLine = in.readLine()) != null) {
-                    response.append(inputLine);
+            try (BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()))) {
+                String inputLine;
+                StringBuffer response = new StringBuffer();
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine).append("\n");
+                }
+                answer = response.toString(); 
             }
-            in.close();
-            answer = response.toString(); 
             
             //answer = uc.getContentEncoding(); 
             uc.disconnect(); 
@@ -96,4 +99,6 @@ public class Downloader {
             
         return answer; 
     }
+    
+    // </editor-fold>
 }

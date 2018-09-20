@@ -5,6 +5,7 @@
  */
 package com.mensa.sharewebservice;
 
+import java.io.File;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -45,23 +46,16 @@ public class DownloaderTest {
      */
     @Test
     public void testGetResponseFromUrl() throws Exception {
-        System.out.println("GetResponseFromUrl");
+        System.out.println("Test GetResponseFromUrl");
         Downloader instance = new Downloader();
         String expResult = "";
-        String result = instance.GetResponseFromUrl();
+        String url = "http://www.rthk.hk/";
+        String result = instance.GetResponseFromUrl(url);
         //System.out.println(String.format("testGetResponseFromUrl Result: %s", result));
         assertNotEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
     
-    @Test
-    public void testConvertXmlFromString() throws Exception {
-        System.out.println("ConvertXmlFromString");
-        Downloader instance = new Downloader();
-        String xmlString = "<Html><Head>Testing</Head></Html>";
-        Document result = instance.ConvertXmlFromString(xmlString);
-        //System.out.println(String.format("testGetResponseFromUrl Result: %s", result));
-        assertNotNull(result);
-    }
+    
 }

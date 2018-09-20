@@ -1,1 +1,339 @@
 column1,column2,column3
+
+5.0.4.Final
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+
+5.3.5.Final
+
+5.0.4.Final
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@e8b606
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@543f31
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""trading_shares"" does not exist, skipping"
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b28ff1
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@6fe5c6
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@e8b606
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@17c41d7
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1327096
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@6fe5c6
+
+jdbc:postgresql://localhost:5432/share_trading
+
+5.0.4.Final
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@1c9c3fd
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@1c9c3fd
+5.3.5.Final
+
+5.0.4.Final
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@e8b606
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@14e405e
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""candle_stick_type"" does not exist, skipping"
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""date_master"" does not exist, skipping"
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""share_information"" does not exist, skipping"
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""trading"" does not exist, skipping"
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""trading_high_turnover_share_list"" does not exist, skipping"
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""trading_index"" does not exist, skipping"
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""trading_index_share_list"" does not exist, skipping"
+"SQL Warning Code: 0, SQLState: 00000"
+"table ""trading_shares"" does not exist, skipping"
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@eb0f4d
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@dfab87
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@e8b606
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6c7f42
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@515e5d
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@dfab87
+
+jdbc:postgresql://localhost:5432/share_trading
+
+5.0.4.Final
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a074b4
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1d3225
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abff6b
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1000fe6
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@ca3ea7
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@fba488
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1ad30c1
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1e8aaeb
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@8e5e38
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@391278
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1d23809
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64f49f
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@138131e
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1576ee3
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@ccf197
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@106681c
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1dddfdd
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@c0344e
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2e709e
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@10c4905
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@c2f
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7ac998
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1b446d7
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1b46040
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@489d12
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@df2da8
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12f1d85
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2c69a6
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@c9bd51
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@787dee
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+20,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@8dcdaa
+
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1b87a98
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1b598a5
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194fb9d
+
+jdbc:postgresql://localhost:5432/share_trading
