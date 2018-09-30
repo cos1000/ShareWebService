@@ -35,7 +35,7 @@ public class TradingIndexShareList  implements Serializable {
     private Long id;
 
     @Column(name = "share_id")
-    private int share_id;
+    private Integer share_id;
 
     @Column(name = "created_at")
     private LocalDateTime created_at; 

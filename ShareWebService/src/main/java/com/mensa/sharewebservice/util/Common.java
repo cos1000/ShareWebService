@@ -8,6 +8,7 @@ package com.mensa.sharewebservice.util;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Properties;
 
 /**
@@ -15,6 +16,53 @@ import java.util.Properties;
  * @author matt_
  */
 public class Common {
+    
+    
+    
+    // <editor-fold desc="Try Parse">
+    
+    public static Integer TryParseToInteger(String value) {
+        try {
+            return Integer.parseInt(value); 
+        } catch (Exception e) {
+            return null; 
+        }
+    }
+    
+    public static Long TryParseToLong(String value) {
+        try {
+            return Long.parseLong(value); 
+        } catch (Exception e) {
+            return null; 
+        }
+    }
+    
+    public static Double TryParseToDouble(String value) {
+        try {
+            return Double.parseDouble(value); 
+        } catch (Exception e) {
+            return null; 
+        }
+    }
+    
+    public static BigDecimal TryParseToDecimal(String value) {
+        try {
+            Long longValue = TryParseToLong(value); 
+            Double doubleValue = TryParseToDouble(value); 
+            
+            if (doubleValue != null) {
+                return BigDecimal.valueOf(doubleValue); 
+            } else if (longValue != null) {
+                return BigDecimal.valueOf(longValue); 
+            } else {
+                return null; 
+            }
+        } catch (Exception e) {
+            return null; 
+        }
+    }
+    
+    // </editor-fold>
     
     // <editor-fold desc="Properties">
     private static Properties properties = new Properties();

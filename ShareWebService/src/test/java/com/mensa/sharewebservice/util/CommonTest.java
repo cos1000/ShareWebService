@@ -6,6 +6,7 @@
 package com.mensa.sharewebservice.util;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.Properties;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -71,6 +72,54 @@ public class CommonTest {
         String key = "DefaultSavePath";
         String expResult = "C:\\Temp\\";
         String result = Common.getProperty(key);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of TryParse method, of class Common.
+     */
+    @Test
+    public void testTryParse_String_Integer() {
+        System.out.println("TryParse");
+        String value = "1234";
+        Integer expResult = 1234;
+        Integer result = Common.TryParseToInteger(value);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of TryParse method, of class Common.
+     */
+    @Test
+    public void testTryParse_String_Long() {
+        System.out.println("TryParse");
+        String value = "1234";
+        Long expResult = 1234L;
+        Long result = Common.TryParseToLong(value);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of TryParse method, of class Common.
+     */
+    @Test
+    public void testTryParse_String_Double() {
+        System.out.println("TryParse");
+        String value = "1234.56";
+        Double expResult = 1234.56D;
+        Double result = Common.TryParseToDouble(value);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of TryParse method, of class Common.
+     */
+    @Test
+    public void testTryParse_String_BigDecimal() {
+        System.out.println("TryParse");
+        String value = "1234.56";
+        BigDecimal expResult = BigDecimal.valueOf(1234.56D);
+        BigDecimal result = Common.TryParseToDecimal(value);
         assertEquals(expResult, result);
     }
     

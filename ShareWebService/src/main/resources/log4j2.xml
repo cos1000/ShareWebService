@@ -43,7 +43,7 @@
             <appender-ref ref="console" level="error" />
             <appender-ref ref="fileLogger" level="debug" />
             <appender-ref ref="MyFile" level="trace" />
-            <appender-ref ref="csvFile" level="info" />
+            <!-- appender-ref ref="csvFile" level="info" / -->
         </Root>
     </Loggers>
 </Configuration>

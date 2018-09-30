@@ -53,8 +53,6 @@ public class DownloaderTest {
         String result = instance.GetResponseFromUrl(url);
         //System.out.println(String.format("testGetResponseFromUrl Result: %s", result));
         assertNotEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     

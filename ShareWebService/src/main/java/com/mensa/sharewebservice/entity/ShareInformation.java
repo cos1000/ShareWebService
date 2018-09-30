@@ -35,7 +35,7 @@ public class ShareInformation implements Serializable {
     private Long id;
 
     @Column(name = "share_id")
-    private int share_id;
+    private Integer share_id;
     @Column(name = "name", length = 200)
     private String name;
     @Column(name = "principal_activities", length = 200)
@@ -47,13 +47,13 @@ public class ShareInformation implements Serializable {
     @Column(name = "listing_date")
     private LocalDateTime listing_date; 
     @Column(name = "issued_shares")
-    private long issued_shares; 
+    private Long issued_shares; 
     @Column(name = "market_capitalisation")
-    private long market_capitalisation; 
+    private Long market_capitalisation; 
     @Column(name = "net_asset_value")
-    private long net_asset_value; 
+    private Long net_asset_value; 
     @Column(name = "net_profit")
-    private long net_profit; 
+    private Long net_profit; 
     @Column(name = "earnings_per_share")
     private BigDecimal earnings_per_share; 
     @Column(name = "last_update")

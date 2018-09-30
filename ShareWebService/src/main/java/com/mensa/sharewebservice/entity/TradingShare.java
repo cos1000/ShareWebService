@@ -37,7 +37,7 @@ public class TradingShare implements Serializable {
     @Column(name = "transaction_date")
     private LocalDateTime transaction_date; 
     @Column(name = "share_id")
-    private int share_id;
+    private Integer share_id;
     @Column(name = "closing", precision = 20, scale = 6)
     private BigDecimal closing;
     @Column(name = "previous_closing", precision = 20, scale = 6)
@@ -57,15 +57,15 @@ public class TradingShare implements Serializable {
     @Column(name = "opening", precision = 20, scale = 6)
     private BigDecimal opening;
     @Column(name = "count_traded")
-    private int count_traded;
+    private Integer count_traded;
     @Column(name = "count_big_traded")
-    private int count_big_traded;
+    private Integer count_big_traded;
     @Column(name = "is_ex_dividend_date")
-    private int is_ex_dividend_date;
+    private Integer is_ex_dividend_date;
     @Column(name = "is_index_share")
-    private int is_index_share;
+    private Integer is_index_share;
     @Column(name = "sequence_number")
-    private int sequence_number;
+    private Integer sequence_number;
     
     @Column(name = "created_at")
     private LocalDateTime created_at; 

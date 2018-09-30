@@ -54,10 +54,10 @@ public class ShareInformationTest extends TestCase {
             share.setIndustry_classification1("");
             share.setIndustry_classification2("");
             share.setListing_date(LocalDateTime.now());
-            share.setIssued_shares(100);
-            share.setMarket_capitalisation(100);
-            share.setNet_asset_value(100);
-            share.setNet_profit(100);
+            share.setIssued_shares(100L);
+            share.setMarket_capitalisation(100L);
+            share.setNet_asset_value(100L);
+            share.setNet_profit(100L);
             share.setEarnings_per_share(BigDecimal.valueOf(100));
             share.setLast_update(LocalDateTime.now());
             

@@ -5,6 +5,8 @@
  */
 package com.mensa.sharewebservice.util;
 
+import java.time.LocalDateTime;
+import java.time.Month;
 import org.jsoup.nodes.Element;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,6 +88,18 @@ public class ConverterTest {
         String xmlString = FileHandler.ReadFromFile(filename);
         Element result = Converter.ConvertXmlFromString(xmlString);
         assertNotNull(result);
+    }
+
+    /**
+     * Test of ConvertDateFromFilename method, of class Converter.
+     */
+    @Test
+    public void testConvertDateFromFilename() {
+        System.out.println("ConvertDateFromFilename");
+        String filename = "d180831e.txt";
+        LocalDateTime expResult = LocalDateTime.of(2018, Month.AUGUST, 31, 0, 0);
+        LocalDateTime result = Converter.ConvertDateFromFilename(filename);
+        assertEquals(expResult, result);
     }
 
 }

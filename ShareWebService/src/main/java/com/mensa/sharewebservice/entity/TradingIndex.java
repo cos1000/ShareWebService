@@ -37,7 +37,7 @@ public class TradingIndex  implements Serializable {
     @Column(name = "transaction_date")
     private LocalDateTime transaction_date; 
     @Column(name = "index")
-    private int index;
+    private Integer index;
     @Column(name = "morning_closing", precision = 20, scale = 6)
     private BigDecimal morning_closing;
     @Column(name = "closing", precision = 20, scale = 6)
