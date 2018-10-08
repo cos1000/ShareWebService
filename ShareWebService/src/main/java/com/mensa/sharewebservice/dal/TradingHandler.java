@@ -7,6 +7,7 @@ package com.mensa.sharewebservice.dal;
 
 import com.mensa.sharewebservice.entity.Trading;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.List;
 
 /**
@@ -20,9 +21,26 @@ public class TradingHandler implements IHandler<Trading> {
         handler = new RecordHandler<Trading>(); 
     }
     
+    // <editor-fold desc="Testing Main">
+    public static void main(String[] args) {
+        TradingHandler handler = new TradingHandler(); 
+        Trading trading = new Trading(); 
+        trading.setTransaction_date(LocalDateTime.of(2010, Month.JANUARY, 10, 0, 0));
+        trading.setCreated_at(LocalDateTime.now());
+        trading.setUpdated_at(LocalDateTime.now());
+        handler.CreateAndReturn(trading); 
+    }
+    // </editor-fold>
+    
     @Override
     public boolean Exist(Trading record) {
         return Get(record) != null; 
+    }
+    
+    @Override
+    public List<Trading> GetAll() {
+        String sql = "select record from Trading record";
+        return handler.GetQuery(sql).getResultList(); 
     }
     
     @Override

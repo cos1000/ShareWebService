@@ -56,6 +56,29 @@ public class TradingIndexShareListHandlerTest {
     }
 
     /**
+     * Test of GetAll method, of class DateMasterHandler.
+     */
+    @Test
+    public void testGetAll() {
+        System.out.println("GetAll");
+        TradingIndexShareListHandler instance = new TradingIndexShareListHandler();
+        
+        TradingIndexShareList testing01 = new TradingIndexShareList(); 
+        testing01.setShare_id(1);
+        TradingIndexShareList testing02 = new TradingIndexShareList(); 
+        testing02.setShare_id(2);
+        
+        int expResult = 2;
+        instance.Create(testing01);
+        instance.Create(testing02); 
+        int result = instance.GetAll().size(); 
+        System.out.println(Integer.toString(result)); 
+        instance.Delete(testing01);
+        instance.Delete(testing02); 
+        assertEquals(expResult, result);
+    }
+
+    /**
      * Test of Get method, of class TradingIndexShareListHandler.
      */
     @Test

@@ -70,8 +70,14 @@ public class RecordReaderTest {
             e.printStackTrace();
         }
         RecordReader instance = new RecordReader();
+        instance.deleteOldRecords(transaction_date);
         boolean expResult = true;
-        boolean result = instance.readFromString(transaction_date, records);
+        boolean result = false; 
+        try {
+            result = instance.readFromString(transaction_date, records);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         instance.deleteOldRecords(transaction_date); 
         assertEquals(expResult, result);
     }
@@ -92,6 +98,7 @@ public class RecordReaderTest {
             e.printStackTrace();
         }
         RecordReader instance = new RecordReader();
+        instance.deleteOldRecords(transaction_date);
         boolean expResult = true;
         boolean result = instance.readFromShareDetail(transaction_date, share_id, shareDetail);
         instance.deleteOldRecords(transaction_date); 
@@ -121,6 +128,7 @@ public class RecordReaderTest {
         Integer index = 1;
         String line = "                  HANG SENG INDEX   27906.59 27888.55 28164.05   -275.50  -0.978";
         RecordReader instance = new RecordReader();
+        instance.deleteOldRecords(transaction_date);
         boolean expResult = true;
         boolean result = instance.writeTradingIndex(transaction_date, index, line);
         instance.deleteOldRecords(transaction_date); 
@@ -149,6 +157,7 @@ public class RecordReaderTest {
         System.out.println("writeTrading");
         LocalDateTime transaction_date = LocalDateTime.of(2000, Month.APRIL, 1, 0, 0);
         RecordReader instance = new RecordReader();
+        instance.deleteOldRecords(transaction_date);
         boolean expResult = true;
         boolean result = instance.writeTrading(transaction_date);
         instance.deleteOldRecords(transaction_date); 
@@ -164,10 +173,10 @@ public class RecordReaderTest {
         LocalDateTime transaction_date = LocalDateTime.of(2000, Month.MAY, 1, 0, 0);
         String above_line = "     1 CKH HOLDINGS     HKD   90.05    90.45    90.45            6,595,110";
         String line = "                              90.45    90.40    89.00          593,442,561";
-        Boolean isFinished = false;
         RecordReader instance = new RecordReader();
+        instance.deleteOldRecords(transaction_date);
         boolean expResult = true;
-        boolean result = instance.writeTradingShare(transaction_date, above_line, line, isFinished);
+        boolean result = instance.writeTradingShare(transaction_date, above_line, line);
         instance.deleteOldRecords(transaction_date); 
         assertEquals(expResult, result);
     }

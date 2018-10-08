@@ -14,7 +14,9 @@
             </PatternLayout>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="50 MB" />
             </Policies>
+            <DefaultRolloverStrategy max="2" />
         </RollingFile>
  
         <RollingFile name="csvFile" 
@@ -25,7 +27,7 @@
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />
                 <SizeBasedTriggeringPolicy size="50 MB" />
             </Policies>
-            <DefaultRolloverStrategy max="200" />
+            <DefaultRolloverStrategy max="2" />
         </RollingFile>
  
         <File name="MyFile" fileName="${filename}">
@@ -42,7 +44,7 @@
         <Root level="debug" additivity="false">
             <appender-ref ref="console" level="error" />
             <appender-ref ref="fileLogger" level="debug" />
-            <appender-ref ref="MyFile" level="trace" />
+            <!-- appender-ref ref="MyFile" level="trace" / -->
             <!-- appender-ref ref="csvFile" level="info" / -->
         </Root>
     </Loggers>

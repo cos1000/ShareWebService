@@ -47,6 +47,7 @@ public class Common {
     
     public static BigDecimal TryParseToDecimal(String value) {
         try {
+            value = value.replace(",", ""); 
             Long longValue = TryParseToLong(value); 
             Double doubleValue = TryParseToDouble(value); 
             

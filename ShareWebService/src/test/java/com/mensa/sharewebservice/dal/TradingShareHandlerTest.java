@@ -7,6 +7,7 @@ package com.mensa.sharewebservice.dal;
 
 import com.mensa.sharewebservice.entity.TradingShare;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -56,6 +57,35 @@ public class TradingShareHandlerTest {
         boolean result = instance.Exist(record);
         instance.Delete(record);
         assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of GetAll method, of class DateMasterHandler.
+     */
+    @Test
+    public void testGetAll() {
+        System.out.println("GetAll");
+        TradingShareHandler instance = new TradingShareHandler();
+        
+        TradingShare testing01 = new TradingShare(); 
+        testing01.setTransaction_date(LocalDateTime.of(2000, 1, 1, 0, 0));
+        testing01.setShare_id(1);
+        TradingShare testing02 = new TradingShare(); 
+        testing02.setTransaction_date(LocalDateTime.of(2000, 1, 2, 0, 0));
+        testing02.setShare_id(1);
+        TradingShare testing03 = new TradingShare(); 
+        testing03.setTransaction_date(LocalDateTime.of(2000, 1, 2, 0, 0));
+        testing03.setShare_id(2);
+        
+        int expResult = 3;
+        instance.Create(testing01);
+        instance.Create(testing02); 
+        instance.Create(testing03); 
+        int result = instance.GetAll().size(); 
+        instance.Delete(testing01);
+        instance.Delete(testing02); 
+        instance.Delete(testing03); 
+        assertTrue(expResult <= result);
     }
 
     /**
@@ -126,5 +156,24 @@ public class TradingShareHandlerTest {
         instance.Delete(record); 
         assertEquals(expResult.getTransaction_date(), result.get(0).getTransaction_date());
     }
-    
+
+    /**
+     * Test of BulkInsert method, of class TradingIndexHandler.
+     */
+    @Test
+    public void testBulkInsert() {
+        System.out.println("BulkInsert");
+        String filename = "C:\\Temp\\trading_shares001.csv";
+        TradingShareHandler instance = new TradingShareHandler();
+        try {
+            instance.BulkInsert(filename); 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        int expResult = 100000;
+        List<TradingShare> records = instance.GetAll(); 
+        int result = records.size();
+        assertEquals(expResult, result);
+    }
+        
 }

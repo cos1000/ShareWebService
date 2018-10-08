@@ -16,6 +16,7 @@ import java.util.Map;
 public interface IHandler<T> {
     public boolean Exist(T record); 
     public T Get(T record); 
+    public List<T> GetAll(); 
     public T CreateAndReturn(T record); 
     public boolean Create(T record); 
     public boolean Update(T record); 

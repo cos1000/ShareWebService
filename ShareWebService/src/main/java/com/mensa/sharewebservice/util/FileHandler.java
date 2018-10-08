@@ -17,6 +17,19 @@ import java.io.IOException;
  */
 public class FileHandler {
     
+    public static boolean AppendStringToFile(String filename, String content) {
+        File file = new File(filename);
+        try (FileWriter fileWriter = new FileWriter(file, true)) {
+            fileWriter.write(content);
+            fileWriter.write("\n"); 
+            fileWriter.flush();
+            return true; 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return false; 
+        }
+    }
+    
     public static boolean SaveToFile(String filename, String content) throws IOException {
         File file = new File(filename);
         try (FileWriter fileWriter = new FileWriter(file, false)) {
@@ -32,7 +45,7 @@ public class FileHandler {
         try (FileReader fileReader = new FileReader(file)) {
             try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
                 while (bufferedReader.ready()) {
-                    answer.append(bufferedReader.readLine()); 
+                    answer.append(bufferedReader.readLine()).append("\n"); 
                 }
             }
         } 

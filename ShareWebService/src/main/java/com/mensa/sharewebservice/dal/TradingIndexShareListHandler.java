@@ -25,6 +25,12 @@ public class TradingIndexShareListHandler  implements IHandler<TradingIndexShare
     }
     
     @Override
+    public List<TradingIndexShareList> GetAll() {
+        String sql = "select record from TradingIndexShareList record";
+        return handler.GetQuery(sql).getResultList(); 
+    }
+    
+    @Override
     public TradingIndexShareList Get(TradingIndexShareList record) {
         String sql = "select record from TradingIndexShareList record where record.share_id = :share_id";
         List<TradingIndexShareList> answer = handler.GetQuery(sql).setParameter("share_id", record.getShare_id()).setMaxResults(1).getResultList(); 

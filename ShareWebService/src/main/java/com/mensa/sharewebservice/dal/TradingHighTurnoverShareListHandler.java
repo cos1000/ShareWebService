@@ -25,6 +25,12 @@ public class TradingHighTurnoverShareListHandler  implements IHandler<TradingHig
     }
     
     @Override
+    public List<TradingHighTurnoverShareList> GetAll() {
+        String sql = "select record from TradingHighTurnoverShareList record";
+        return handler.GetQuery(sql).getResultList(); 
+    }
+    
+    @Override
     public TradingHighTurnoverShareList Get(TradingHighTurnoverShareList record) {
         String sql = "select record from TradingHighTurnoverShareList record where record.share_id = :share_id";
         List<TradingHighTurnoverShareList> answer = handler.GetQuery(sql).setParameter("share_id", record.getShare_id()).setMaxResults(1).getResultList(); 

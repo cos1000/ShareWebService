@@ -62,7 +62,7 @@ public class FileHandlerTest {
         System.out.println("Test ReadFromFile");
         
         String filename = "C:\\Temp\\testing.txt";
-        String xmlString = "<Html><Head>Testing</Head></Html>";
+        String xmlString = "<Html><Head>Testing</Head></Html>\n";
         String result = "";
         Boolean answer = FileHandler.SaveToFile(filename, xmlString);
         result = FileHandler.ReadFromFile(filename); 

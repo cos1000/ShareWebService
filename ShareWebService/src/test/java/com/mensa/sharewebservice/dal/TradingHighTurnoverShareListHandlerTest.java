@@ -56,6 +56,28 @@ public class TradingHighTurnoverShareListHandlerTest {
     }
 
     /**
+     * Test of GetAll method, of class DateMasterHandler.
+     */
+    @Test
+    public void testGetAll() {
+        System.out.println("GetAll");
+        TradingHighTurnoverShareListHandler instance = new TradingHighTurnoverShareListHandler();
+        
+        TradingHighTurnoverShareList testing01 = new TradingHighTurnoverShareList(); 
+        testing01.setShare_id(3);
+        TradingHighTurnoverShareList testing02 = new TradingHighTurnoverShareList(); 
+        testing02.setShare_id(4);
+        
+        int expResult = 2;
+        instance.Create(testing01);
+        instance.Create(testing02); 
+        int result = instance.GetAll().size(); 
+        instance.Delete(testing01);
+        instance.Delete(testing02); 
+        assertEquals(expResult, result);
+    }
+
+    /**
      * Test of Get method, of class TradingHighTurnoverShareListHandler.
      */
     @Test

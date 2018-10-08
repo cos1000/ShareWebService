@@ -44,12 +44,6 @@ public class Converter {
         LocalDateTime transaction_date = null; 
         
         if (year != null && month != null && day != null) {
-            
-            System.out.println("Matt Testing"); 
-            System.out.println(year); 
-            System.out.println(month); 
-            System.out.println(day); 
-            
             transaction_date = LocalDateTime.of(year + 2000, month, day, 0, 0);
         }
         return transaction_date; 

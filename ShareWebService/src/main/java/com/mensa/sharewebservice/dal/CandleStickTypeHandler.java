@@ -25,6 +25,12 @@ public class CandleStickTypeHandler implements IHandler<CandleStickType> {
     }
     
     @Override
+    public List<CandleStickType> GetAll() {
+        String sql = "select record from CandleStickType record";
+        return handler.GetQuery(sql).getResultList(); 
+    }
+    
+    @Override
     public CandleStickType Get(CandleStickType record) {
         String sql = "select record from CandleStickType record where record.name = :name";
         List<CandleStickType> answer = handler.GetQuery(sql).setParameter("name", record.getName()).setMaxResults(1).getResultList(); 

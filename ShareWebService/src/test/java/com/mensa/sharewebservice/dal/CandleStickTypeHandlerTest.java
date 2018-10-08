@@ -56,6 +56,28 @@ public class CandleStickTypeHandlerTest {
     }
 
     /**
+     * Test of GetAll method, of class DateMasterHandler.
+     */
+    @Test
+    public void testGetAll() {
+        System.out.println("GetAll");
+        CandleStickTypeHandler instance = new CandleStickTypeHandler();
+        
+        CandleStickType testing01 = new CandleStickType(); 
+        testing01.setName("Testing01");
+        CandleStickType testing02 = new CandleStickType(); 
+        testing02.setName("Testing02");
+        
+        int expResult = 2;
+        instance.Create(testing01);
+        instance.Create(testing02); 
+        int result = instance.GetAll().size(); 
+        instance.Delete(testing01);
+        instance.Delete(testing02); 
+        assertEquals(expResult, result);
+    }
+
+    /**
      * Test of Get method, of class CandleStickTypeHandler.
      */
     @Test

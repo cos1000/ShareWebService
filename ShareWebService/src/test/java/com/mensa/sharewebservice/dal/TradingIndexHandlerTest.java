@@ -59,6 +59,30 @@ public class TradingIndexHandlerTest {
     }
 
     /**
+     * Test of GetAll method, of class DateMasterHandler.
+     */
+    @Test
+    public void testGetAll() {
+        System.out.println("GetAll");
+        TradingIndexHandler instance = new TradingIndexHandler();
+        
+        TradingIndex testing01 = new TradingIndex(); 
+        testing01.setTransaction_date(LocalDateTime.of(2000, 1, 1, 0, 0));
+        testing01.setIndex(1);
+        TradingIndex testing02 = new TradingIndex(); 
+        testing02.setTransaction_date(LocalDateTime.of(2000, 1, 2, 0, 0));
+        testing02.setIndex(1);
+        
+        int expResult = 2;
+        instance.Create(testing01);
+        instance.Create(testing02); 
+        int result = instance.GetAll().size(); 
+        instance.Delete(testing01);
+        instance.Delete(testing02); 
+        assertTrue(expResult <= result);
+    }
+
+    /**
      * Test of Get method, of class TradingIndexHandler.
      */
     @Test
@@ -125,6 +149,30 @@ public class TradingIndexHandlerTest {
         List<TradingIndex> result = instance.Get(transaction_date);
         instance.Delete(record); 
         assertEquals(expResult.getTransaction_date(), result.get(0).getTransaction_date());
+    }
+    
+    /**
+     * Test of BulkInsert method, of class TradingIndexHandler.
+     */
+    @Test
+    public void testBulkInsert() {
+        System.out.println("BulkInsert");
+        String filename = "C:\\Temp\\trading_index.csv";
+        TradingIndexHandler instance = new TradingIndexHandler();
+        try {
+            instance.BulkInsert(filename); 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        int expResult = 5037;
+        List<TradingIndex> records = instance.GetAll(); 
+        int result = records.size();
+        /*
+        for (TradingIndex item : records) {
+            instance.Delete(item); 
+        }
+*/
+        assertEquals(expResult, result);
     }
     
 }

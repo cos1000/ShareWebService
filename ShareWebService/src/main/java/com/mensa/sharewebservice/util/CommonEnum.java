@@ -11,6 +11,11 @@ package com.mensa.sharewebservice.util;
  */
 public class CommonEnum {
     public enum PropertyKeys {
-        DefaultSavePath
+        DefaultSavePath, 
+        EmailSendTo, 
+        EmailSendFrom, 
+        EmailHost, 
+        EmailUser, 
+        EmailPassword
     }
 }

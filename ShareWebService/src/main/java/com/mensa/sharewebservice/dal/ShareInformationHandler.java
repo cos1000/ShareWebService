@@ -25,6 +25,12 @@ public class ShareInformationHandler  implements IHandler<ShareInformation> {
     }
     
     @Override
+    public List<ShareInformation> GetAll() {
+        String sql = "select record from ShareInformation record";
+        return handler.GetQuery(sql).getResultList(); 
+    }
+    
+    @Override
     public ShareInformation Get(ShareInformation record) {
         String sql = "select record from ShareInformation record where record.share_id = :share_id";
         List<ShareInformation> answer = handler.GetQuery(sql).setParameter("share_id", record.getShare_id()).setMaxResults(1).getResultList(); 

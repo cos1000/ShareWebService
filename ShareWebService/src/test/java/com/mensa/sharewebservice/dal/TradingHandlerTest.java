@@ -7,6 +7,7 @@ package com.mensa.sharewebservice.dal;
 
 import com.mensa.sharewebservice.entity.Trading;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -53,6 +54,28 @@ public class TradingHandlerTest {
         boolean expResult = true;
         boolean result = instance.Exist(record);
         instance.Delete(record);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of GetAll method, of class DateMasterHandler.
+     */
+    @Test
+    public void testGetAll() {
+        System.out.println("GetAll");
+        TradingHandler instance = new TradingHandler();
+        
+        Trading testing01 = new Trading(); 
+        testing01.setTransaction_date(LocalDateTime.of(2000, 1, 1, 0, 0));
+        Trading testing02 = new Trading(); 
+        testing02.setTransaction_date(LocalDateTime.of(2000, 1, 2, 0, 0));
+        
+        int expResult = 2;
+        instance.Create(testing01);
+        instance.Create(testing02); 
+        int result = instance.GetAll().size(); 
+        instance.Delete(testing01);
+        instance.Delete(testing02); 
         assertEquals(expResult, result);
     }
 

@@ -18,45 +18,46 @@ import org.slf4j.LoggerFactory;
  * @author matt_
  */
 public class RecordHandler<T> {
-    private Logger log = LoggerFactory.getLogger(RecordHandler.class);
-    private EntityManagerFactory entityManagerFactory; 
-    private EntityManager entityManager; 
+    private static Logger log = LoggerFactory.getLogger(RecordHandler.class);
+    private static EntityManagerFactory entityManagerFactory; 
+    private static EntityManager entityManager; 
 
-    public RecordHandler() {
+    static {
         entityManagerFactory = Persistence.createEntityManagerFactory( "org.hibernate.share.jpa" );
         entityManager = entityManagerFactory.createEntityManager();
     }
     
     @Override
     public void finalize() {
-        entityManager.close();
-        entityManagerFactory.close();
+        //entityManager.close();
+        //entityManagerFactory.close();
     }
     
-    private void setEntityManager() {
+    public static void setEntityManager() {
         if (!entityManager.isOpen()) {
             entityManager.close(); 
             entityManager = entityManagerFactory.createEntityManager();
         }        
     }
     
-    public EntityManager getEntityManager() {
-        return this.entityManager; 
+    public static EntityManager getEntityManager() {
+        return entityManager; 
     }
     
-    public EntityManagerFactory getEntityManagerFactory() {
-        return this.entityManagerFactory; 
+    public static EntityManagerFactory getEntityManagerFactory() {
+        return entityManagerFactory; 
     }
     
     public boolean CreateOrUpdate(T record) {
+        log.debug("CreateOrUpdate");
         boolean answer = true; 
-        setTransaction(); 
+        setTransaction();
         try {
             entityManager.persist(record);
             setCommit();
         } catch (Exception e) {
             if (e != null) log.error(e.getMessage());
-            setRollback();
+            setRollback(); 
             answer = false; 
         }
         return answer; 
@@ -64,13 +65,13 @@ public class RecordHandler<T> {
 
     public boolean Delete(T record) {
         boolean answer = true; 
-        setTransaction(); 
+        setTransaction();
         try {
             entityManager.remove(record);
             setCommit();
         } catch (Exception e) {
             if (e != null) log.error(e.getMessage());
-            setRollback();
+            setRollback(); 
             answer = false; 
         }
         return answer; 
@@ -80,12 +81,12 @@ public class RecordHandler<T> {
         return GetQuery(sql).getResultList(); 
     }
     
-    public Query GetQuery(String sql) {
+    public static Query GetQuery(String sql) {
         setEntityManager(); 
         return entityManager.createQuery(sql); 
     }
         
-    public void setTransaction() {
+    public static void setTransaction() {
         if (entityManager.getTransaction().isActive())  {
             setRollback(); 
         }
@@ -93,13 +94,13 @@ public class RecordHandler<T> {
         entityManager.getTransaction().begin();
     }
 
-    public void setRollback() {
+    public static void setRollback() {
         if (entityManager.getTransaction().isActive()) {
             entityManager.getTransaction().rollback();
         }
     }
     
-    public void setCommit() {
+    public static void setCommit() {
         if (entityManager.getTransaction().isActive()) {
             entityManager.getTransaction().commit();
         }
