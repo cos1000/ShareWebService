@@ -4,7 +4,14 @@
     <description>
             Persistence unit for the JPA tutorial of the Hibernate Getting Started Guide
     </description>
-    <class>com.mensa.sharewebservice.entity.TradingShare</class>
+    <class>com.mensa.sharewebservice.model.CandleStickType</class>
+    <class>com.mensa.sharewebservice.model.DateMaster</class>
+    <class>com.mensa.sharewebservice.model.ShareInformation</class>
+    <class>com.mensa.sharewebservice.model.Trading</class>
+    <class>com.mensa.sharewebservice.model.TradingHighTurnoverShareList</class>
+    <class>com.mensa.sharewebservice.model.TradingIndex</class>
+    <class>com.mensa.sharewebservice.model.TradingIndexShareList</class>
+    <class>com.mensa.sharewebservice.model.TradingShare</class>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/share_trading"/>
@@ -13,10 +20,10 @@
       <property name="hibernate.show_sql" value="false"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="hibernate.connection.pool_size" value="10"/>
-      <property name="hibernate.order_inserts" value="true" />
-      <property name="hibernate.order_updates" value="true" />
-      <property name="hibernate.jdbc.batch_size" value="1000" />
-      <property name="logging.level.org.hibernate.SQL" value="DEBUG" />
+      <property name="hibernate.order_inserts" value="true"/>
+      <property name="hibernate.order_updates" value="true"/>
+      <property name="hibernate.jdbc.batch_size" value="1000"/>
+      <property name="logging.level.org.hibernate.SQL" value="DEBUG"/>
     </properties>
   </persistence-unit>
 </persistence>

@@ -5,18 +5,22 @@
  */
 package com.mensa.sharewebservice.util;
 
+import com.mensa.sharewebservice.dao.RecordHandler;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Properties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author matt_
  */
 public class Common {
-    
+    private static Logger log = LoggerFactory.getLogger(Common.class);
     
     
     // <editor-fold desc="Try Parse">
@@ -87,12 +91,23 @@ public class Common {
         properties = new Properties();
         String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         String configFile = rootPath + "../classes/config.properties";
+        log.debug(rootPath);
         try {
-            properties.load(new FileInputStream(configFile));
+            File myFile = new File(configFile); 
+            if (myFile.exists()) {
+                log.debug("Existed Config File");
+                properties.load(new FileInputStream(configFile));
+            } else {
+                log.debug("Not Exist Config File");
+                properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
+            }
+            
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
+            log.error(ex.getMessage());
         } catch (IOException ex) {
             ex.printStackTrace();
+            log.error(ex.getMessage());
         }
     }
     

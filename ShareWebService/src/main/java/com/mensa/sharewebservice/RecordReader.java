@@ -5,15 +5,15 @@
  */
 package com.mensa.sharewebservice;
 
-import com.mensa.sharewebservice.dal.RecordHandler;
-import com.mensa.sharewebservice.dal.ShareInformationHandler;
-import com.mensa.sharewebservice.dal.TradingHandler;
-import com.mensa.sharewebservice.dal.TradingIndexHandler;
-import com.mensa.sharewebservice.dal.TradingShareHandler;
-import com.mensa.sharewebservice.entity.ShareInformation;
-import com.mensa.sharewebservice.entity.Trading;
-import com.mensa.sharewebservice.entity.TradingIndex;
-import com.mensa.sharewebservice.entity.TradingShare;
+import com.mensa.sharewebservice.dao.RecordHandler;
+import com.mensa.sharewebservice.dao.ShareInformationHandler;
+import com.mensa.sharewebservice.dao.TradingHandler;
+import com.mensa.sharewebservice.dao.TradingIndexHandler;
+import com.mensa.sharewebservice.dao.TradingShareHandler;
+import com.mensa.sharewebservice.model.ShareInformation;
+import com.mensa.sharewebservice.model.Trading;
+import com.mensa.sharewebservice.model.TradingIndex;
+import com.mensa.sharewebservice.model.TradingShare;
 import com.mensa.sharewebservice.util.Common;
 import com.mensa.sharewebservice.util.Converter;
 import com.mensa.sharewebservice.util.FileHandler;
@@ -63,7 +63,7 @@ public class RecordReader {
     private final CharSequence TRADINGSUSPENDED; 
     private final String SEPARATE; 
     private final int MAXSHAREID; 
-    private final String DEBUGFILENAME; 
+    //private final String DEBUGFILENAME; 
     // </editor-fold>
      
     
@@ -94,7 +94,7 @@ public class RecordReader {
         this.SEPARATE = "-------------------------------------------------------------------------------";
         this.status = CurrentStatus.None; 
         this.MAXSHAREID = 10000; 
-        this.DEBUGFILENAME = "C:\\Temp\\debug.txt"; 
+        //this.DEBUGFILENAME = "C:\\Temp\\debug.txt"; 
         log = LoggerFactory.getLogger(RecordReader.class);
     }
     // </editor-fold>
@@ -127,6 +127,7 @@ public class RecordReader {
         
         tradingShareList = new HashMap<Integer, TradingShare>(); 
         RecordHandler.setTransaction();
+        isFinished = false; 
         //int testing = 0; 
         for (String line : lines) {
             //System.out.println(Integer.toString(++testing) + ": " + status.toString() + ", " + Boolean.toString(answer));
@@ -181,7 +182,7 @@ public class RecordReader {
                 }
             }
             
-            aboveLine = line; 
+            if (!line.isEmpty()) aboveLine = line; 
             if (!answer) break; 
         }
         if (answer) {
@@ -239,7 +240,7 @@ public class RecordReader {
             
             int startChar_afternoon = shareDetail.substring(endChar+1).indexOf("["); 
             int endChar_afternoon = shareDetail.substring(endChar+1).indexOf("]"); 
-            tradingList = shareDetail.substring(startChar_afternoon + 1, endChar_afternoon).split(" "); 
+            tradingList = shareDetail.substring(endChar+1).substring(startChar_afternoon + 1, endChar_afternoon).split(" "); 
             for (int counter = 0; counter < tradingList.length; counter++) {
                 if (tradingList[counter].contains(separate)) count_traded++; 
                 String[] recordList = tradingList[counter].replace("C", "").replace("D", "").replace("M", "").replace("P", "").replace("U", "").replace("X", "").replace("Y", "").split("-"); 
@@ -361,17 +362,16 @@ public class RecordReader {
     public boolean writeTradingShare(LocalDateTime transaction_date, String above_line, String line) {
         
         String string_share_id = above_line.substring(1, 6); 
-        String string_closing = line.substring(29, 36); 
-        String string_previous_closing = above_line.substring(29, 36); 
+        String string_closing = line.substring(27, 36); 
+        String string_previous_closing = above_line.substring(27, 36); 
         String string_ask = above_line.substring(36, 45); 
         String string_bid = line.substring(36, 45); 
         String string_high = above_line.substring(45, 54); 
         String string_low = line.substring(45, 54); 
         String string_shares_traded = above_line.substring(54, 74); 
-        String string_turnover = above_line.substring(54, 74); 
+        String string_turnover = line.substring(54, 74); 
         boolean isIndexShare = "*".equals(above_line.substring(0, 1)); 
 
-        /*
         log.debug("Write Trading Share");
         log.debug(string_share_id);
         log.debug(string_closing);
@@ -383,7 +383,6 @@ public class RecordReader {
         log.debug(string_shares_traded);
         log.debug(string_turnover);
         log.debug(isIndexShare? "Y" : "N");
-        */
         
         Integer share_id = null; 
         BigDecimal closing = null; 

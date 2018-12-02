@@ -16,6 +16,7 @@ public class CommonEnum {
         EmailSendFrom, 
         EmailHost, 
         EmailUser, 
-        EmailPassword
+        EmailPassword, 
+        DefaultBulkInsertPath
     }
 }
