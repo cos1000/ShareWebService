@@ -202,6 +202,7 @@ public class RecordReader {
         } else {
             RecordHandler.setRollback();
         }
+        RecordHandler.getEntityManager().clear();
         
         /*
         if (RecordHandler.getEntityManager() != null) {

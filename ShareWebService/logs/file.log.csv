@@ -153,3 +153,25 @@ org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProvid
 
 
 
+5.3.5.Final
+
+5.0.4.Final
+
+org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
+"{user=admin, password=workflow}"
+false
+10,1
+org.hibernate.dialect.PostgreSQL95Dialect
+java.lang.reflect.InvocationTargetException
+java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
+
+
+
+
+
+
+
+
+
+

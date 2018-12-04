@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -66,7 +67,7 @@ public class TradingShareServiceImpl implements IService<TradingShare> {
         return recordHandler.Delete(getById(id)); 
     }
     
-    public HashMap<LocalDateTime, Long> summary() {
+    public Map<LocalDateTime, Long> summary() {
         return recordHandler.GetSummary(); 
     }
 

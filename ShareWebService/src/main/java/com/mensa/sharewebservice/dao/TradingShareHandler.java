@@ -14,6 +14,7 @@ import java.io.StringReader;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.LockModeType;
 import org.springframework.stereotype.Repository;
@@ -137,8 +138,8 @@ public class TradingShareHandler  implements IHandler<TradingShare> {
         return true; 
     }
     
-    public HashMap<LocalDateTime, Long> GetSummary() {
-        HashMap<LocalDateTime, Long> answer = new HashMap<LocalDateTime, Long>(); 
+    public Map<LocalDateTime, Long> GetSummary() {
+        Map<LocalDateTime, Long> answer = new HashMap<LocalDateTime, Long>(); 
         String sql = "select record.transaction_date, count(record.share_id) as noOfRecord from TradingShare record group by record.transaction_date order by record.transaction_date desc";
         List sqlResult = handler.GetQuery(sql).setMaxResults(100).getResultList(); 
         for (Object object : sqlResult) {
@@ -147,7 +148,7 @@ public class TradingShareHandler  implements IHandler<TradingShare> {
         return answer; 
     }
     
-    private void getSummaryResult(Object result, HashMap<LocalDateTime, Long> answer) {
+    private void getSummaryResult(Object result, Map<LocalDateTime, Long> answer) {
         if (result == null) return; 
         if (result instanceof Object[]) {
             LocalDateTime transaction_date = null; 
