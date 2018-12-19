@@ -241,16 +241,19 @@ public class RecordReader {
             
             int startChar_afternoon = shareDetail.substring(endChar+1).indexOf("["); 
             int endChar_afternoon = shareDetail.substring(endChar+1).indexOf("]"); 
-            tradingList = shareDetail.substring(endChar+1).substring(startChar_afternoon + 1, endChar_afternoon).split(" "); 
-            for (int counter = 0; counter < tradingList.length; counter++) {
-                if (tradingList[counter].contains(separate)) count_traded++; 
-                String[] recordList = tradingList[counter].replace("C", "").replace("D", "").replace("M", "").replace("P", "").replace("U", "").replace("X", "").replace("Y", "").split("-"); 
-                if (recordList.length != 2) continue; 
-                BigDecimal numberOfShare = Common.TryParseToDecimal(recordList[0].trim()); 
-                BigDecimal price = Common.TryParseToDecimal(recordList[1].trim()); 
-                if (numberOfShare == null || price == null) continue; 
-                if (opening == null) opening = price; 
-                if (numberOfShare.multiply(price).compareTo(big_traded_price) > 0) count_big_traded++; 
+            if (startChar_afternoon >= 0 && endChar_afternoon >= 0)
+            {
+                tradingList = shareDetail.substring(endChar+1).substring(startChar_afternoon + 1, endChar_afternoon).split(" "); 
+                for (int counter = 0; counter < tradingList.length; counter++) {
+                    if (tradingList[counter].contains(separate)) count_traded++; 
+                    String[] recordList = tradingList[counter].replace("C", "").replace("D", "").replace("M", "").replace("P", "").replace("U", "").replace("X", "").replace("Y", "").split("-"); 
+                    if (recordList.length != 2) continue; 
+                    BigDecimal numberOfShare = Common.TryParseToDecimal(recordList[0].trim()); 
+                    BigDecimal price = Common.TryParseToDecimal(recordList[1].trim()); 
+                    if (numberOfShare == null || price == null) continue; 
+                    if (opening == null) opening = price; 
+                    if (numberOfShare.multiply(price).compareTo(big_traded_price) > 0) count_big_traded++; 
+                }
             }
             
             TradingShare tradingShare = tradingShareList.get(share_id); 
@@ -279,10 +282,11 @@ public class RecordReader {
     
     public String removeFormatString(String line) {
         final CharSequence fontXml = "</font></pre><pre><font size='1'>";
+        final CharSequence fontXml2 = "</font></pre><pre><font size=\"1\">";
         final CharSequence blank = "";
         final CharSequence amp = "&amp;";
         final CharSequence ampSignal = "&";
-        return line.replace(fontXml, blank).replace(amp, ampSignal); 
+        return line.replace(fontXml, blank).replace(fontXml2, blank).replace(amp, ampSignal); 
     }
 
     // </editor-fold>
@@ -373,17 +377,17 @@ public class RecordReader {
         String string_turnover = line.substring(54, 74); 
         boolean isIndexShare = "*".equals(above_line.substring(0, 1)); 
 
-        log.debug("Write Trading Share");
-        log.debug(string_share_id);
-        log.debug(string_closing);
-        log.debug(string_previous_closing);
-        log.debug(string_ask);
-        log.debug(string_bid);
-        log.debug(string_high);
-        log.debug(string_low);
-        log.debug(string_shares_traded);
-        log.debug(string_turnover);
-        log.debug(isIndexShare? "Y" : "N");
+//        log.debug("Write Trading Share");
+//        log.debug(string_share_id);
+//        log.debug(string_closing);
+//        log.debug(string_previous_closing);
+//        log.debug(string_ask);
+//        log.debug(string_bid);
+//        log.debug(string_high);
+//        log.debug(string_low);
+//        log.debug(string_shares_traded);
+//        log.debug(string_turnover);
+//        log.debug(isIndexShare? "Y" : "N");
         
         Integer share_id = null; 
         BigDecimal closing = null; 

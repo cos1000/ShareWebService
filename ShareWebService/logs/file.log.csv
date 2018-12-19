@@ -1,177 +1,43 @@
 column1,column2,column3
-
-5.0.4.Final
-
-org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
-false
-10,1
-org.hibernate.dialect.PostgreSQL95Dialect
-java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@1214b94
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@135493d
-
-
+org.hibernate.share.jpa
 5.3.5.Final
 
 5.0.4.Final
 
 org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
+"{user=admin, password=****}"
 false
 10,1
 org.hibernate.dialect.PostgreSQL95Dialect
 java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
+java.util.UUID,org.hibernate.type.UUIDBinaryType@2816a8
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1038f97
 
-
+org.hibernate.share.jpa
 5.3.5.Final
 
 5.0.4.Final
 
 org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
+"{user=admin, password=****}"
 false
 10,1
 org.hibernate.dialect.PostgreSQL95Dialect
 java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
+java.util.UUID,org.hibernate.type.UUIDBinaryType@28b1d3
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@f3166a
 
-
+org.hibernate.share.jpa
 5.3.5.Final
 
 5.0.4.Final
 
 org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
+"{user=admin, password=****}"
 false
 10,1
 org.hibernate.dialect.PostgreSQL95Dialect
 java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
-
-
-5.3.5.Final
-
-5.0.4.Final
-
-org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
-false
-10,1
-org.hibernate.dialect.PostgreSQL95Dialect
-java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
-
-
-5.3.5.Final
-
-5.0.4.Final
-
-org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
-false
-10,1
-org.hibernate.dialect.PostgreSQL95Dialect
-java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
-
-
-5.3.5.Final
-
-5.0.4.Final
-
-org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
-false
-10,1
-org.hibernate.dialect.PostgreSQL95Dialect
-java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
-
-
-
-
-5.3.5.Final
-
-5.0.4.Final
-
-org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
-false
-10,1
-org.hibernate.dialect.PostgreSQL95Dialect
-java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@125b795
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1483843
-
-
-
-
-
-
-
-
-
-
-
-5.3.5.Final
-
-5.0.4.Final
-
-org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
-false
-10,1
-org.hibernate.dialect.PostgreSQL95Dialect
-java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
-
-
-
-
-5.3.5.Final
-
-5.0.4.Final
-
-org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
-false
-10,1
-org.hibernate.dialect.PostgreSQL95Dialect
-java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
-
-
-
-
-5.3.5.Final
-
-5.0.4.Final
-
-org.postgresql.Driver,jdbc:postgresql://localhost:5432/share_trading
-"{user=admin, password=workflow}"
-false
-10,1
-org.hibernate.dialect.PostgreSQL95Dialect
-java.lang.reflect.InvocationTargetException
-java.util.UUID,org.hibernate.type.UUIDBinaryType@6d0c69
-org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@125e878
-
-
-
-
-
-
-
-
-
+java.util.UUID,org.hibernate.type.UUIDBinaryType@28b1d3
+org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@f3166a
 

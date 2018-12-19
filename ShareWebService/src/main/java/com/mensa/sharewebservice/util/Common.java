@@ -11,6 +11,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +24,13 @@ import org.slf4j.LoggerFactory;
 public class Common {
     private static Logger log = LoggerFactory.getLogger(Common.class);
     
+    // <editor-fold desc="Try Parse">
+    
+    public static LocalDateTime GetDateWithoutTime(LocalDateTime time) {
+        return LocalDateTime.of(time.getYear(), time.getMonth(), time.getDayOfMonth(), 0, 0, 0); 
+    }
+    
+    // </editor-fold>
     
     // <editor-fold desc="Try Parse">
     

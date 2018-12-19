@@ -87,4 +87,25 @@ public class TradingShareController implements IController<TradingShare>{
         return "tradingShare";
     }
     
+    @RequestMapping(value = "/tradingShares/insertFileByYear", method = RequestMethod.GET)
+    public String insertFileByYear(Model model){
+        this.service.insertFileByYear();
+        model.addAttribute("message", "Inserting File");
+        return "tradingShare";
+    }
+    
+    @RequestMapping(value = "/tradingShares/insertFileToCurrentDate", method = RequestMethod.GET)
+    public String insertFileToCurrentDate(Model model){
+        this.service.insertFileToCurrentDate();
+        model.addAttribute("message", "Inserting File");
+        return "tradingShare";
+    }
+    
+    @RequestMapping(value = "/tradingShares/calculateSequenceNumber", method = RequestMethod.GET)
+    public String insertSummary(Model model){
+        this.service.calculateSequenceNumber();
+        model.addAttribute("message", "calculate Sequence Number");
+        return "tradingShare";
+    }
+    
 }

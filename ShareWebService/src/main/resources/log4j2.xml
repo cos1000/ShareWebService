@@ -21,7 +21,7 @@
  
         <RollingFile name="csvFile" 
                      fileName="${csvLog.fileName}.csv"
-                     filePattern="${csvLog.filename}-%d{MM-dd-yyyy}-%i.csv" >
+                     filePattern="${csvLog.filename}-%d{MM-dd-yyyy}.csv" >
             <CsvParameterLayout delimiter="," header="${file-header}\n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />

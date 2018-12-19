@@ -161,4 +161,14 @@ public class TradingShareHandler  implements IHandler<TradingShare> {
         }
     }
     
+    public Long GetNoOfRecord(TradingShare record) {
+        String sql = "select count(record.transaction_date) from TradingShare record where record.transaction_date <= :transaction_date and record.share_id = :share_id";
+        return (Long) handler.GetQuery(sql).setParameter("transaction_date", record.getTransaction_date()).setParameter("share_id", record.getShare_id()).getSingleResult(); 
+    }
+    
+    public LocalDateTime GetMaxSummaryDate() {
+        String sql = "select max(record.transaction_date) from TradingShare record where record.sequence_number is not null";
+        return (LocalDateTime) handler.GetQuery(sql).getSingleResult(); 
+    }
+    
 }

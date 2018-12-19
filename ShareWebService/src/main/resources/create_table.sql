@@ -8,8 +8,237 @@
  * Created: Dec 3, 2018
  */
 
+-- Table: public.candle_stick_type
+
+-- DROP TABLE public.candle_stick_type;
+
+CREATE TABLE public.candle_stick_type
+(
+    id bigint NOT NULL,
+    name character varying(200) COLLATE pg_catalog."default",
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT candle_stick_type_pkey PRIMARY KEY (id),
+    CONSTRAINT candle_stick_type_unique UNIQUE (name)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.candle_stick_type
+    OWNER to admin;
+
+-- Table: public.date_master
+
+-- DROP TABLE public.date_master;
+
+CREATE TABLE public.date_master
+(
+    id bigint NOT NULL,
+    date_code timestamp without time zone,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT date_master_pkey PRIMARY KEY (id),
+    CONSTRAINT date_master_unique UNIQUE (date_code)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.date_master
+    OWNER to admin;
 
 
+-- Table: public.share_information
+
+-- DROP TABLE public.share_information;
+
+CREATE TABLE public.share_information
+(
+    id bigint NOT NULL,
+    share_id integer,
+    name character varying(200) COLLATE pg_catalog."default",
+    industry_classification1 character varying(200) COLLATE pg_catalog."default",
+    industry_classification2 character varying(200) COLLATE pg_catalog."default",
+    principal_activities character varying(200) COLLATE pg_catalog."default",
+    earnings_per_share numeric(19,2),
+    issued_shares bigint,
+    market_capitalisation bigint,
+    net_asset_value bigint,
+    net_profit bigint,
+    last_update timestamp without time zone,
+    listing_date timestamp without time zone,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT share_information_pkey PRIMARY KEY (id),
+    CONSTRAINT share_information_unique UNIQUE (share_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.share_information
+    OWNER to admin;
+
+-- Table: public.trading
+
+-- DROP TABLE public.trading;
+
+CREATE TABLE public.trading
+(
+    id bigint NOT NULL,
+    transaction_date timestamp without time zone,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT trading_pkey PRIMARY KEY (id),
+    CONSTRAINT trading_unique UNIQUE (transaction_date)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.trading
+    OWNER to admin;
+
+
+-- Table: public.trading_high_turnover_share_list
+
+-- DROP TABLE public.trading_high_turnover_share_list;
+
+CREATE TABLE public.trading_high_turnover_share_list
+(
+    id bigint NOT NULL,
+    share_id integer,
+    ranking integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT trading_high_turnover_share_list_pkey PRIMARY KEY (id),
+    CONSTRAINT trading_high_turnover_share_list_unique UNIQUE (share_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.trading_high_turnover_share_list
+    OWNER to admin;
+
+-- Table: public.trading_index
+
+-- DROP TABLE public.trading_index;
+
+CREATE TABLE public.trading_index
+(
+    id bigint NOT NULL,
+    transaction_date timestamp without time zone,
+    index integer,
+    previous_closing numeric(20,6),
+    morning_closing numeric(20,6),
+    closing numeric(20,6),
+    sequence_number numeric(20,6),
+    simple_moving_average_10 numeric(20,6),
+    simple_moving_average_20 numeric(20,6),
+    simple_moving_average_50 numeric(20,6),
+    simple_moving_average_250 numeric(20,6),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT trading_index_pkey PRIMARY KEY (id),
+    CONSTRAINT trading_index_unique UNIQUE (transaction_date, index)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.trading_index
+    OWNER to admin;
+
+
+-- Table: public.trading_index_share_list
+
+-- DROP TABLE public.trading_index_share_list;
+
+CREATE TABLE public.trading_index_share_list
+(
+    id bigint NOT NULL,
+    share_id integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT trading_index_share_list_pkey PRIMARY KEY (id),
+    CONSTRAINT trading_index_share_list_unique UNIQUE (share_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.trading_index_share_list
+    OWNER to admin;
+
+-- Table: public.trading_shares
+
+-- DROP TABLE public.trading_shares;
+
+CREATE TABLE public.trading_shares
+(
+    id bigint NOT NULL,
+    transaction_date timestamp without time zone,
+    share_id integer,
+    sequence_number integer,
+    previous_closing numeric(20,6),
+    opening numeric(20,6),
+    closing numeric(20,6),
+    high numeric(20,6),
+    low numeric(20,6),
+    ask numeric(20,6),
+    bid numeric(20,6),
+    shares_traded numeric(20,6),
+    turnover numeric(20,6),
+    count_big_traded integer,
+    count_traded integer,
+    is_ex_dividend_date integer,
+    is_index_share integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT trading_shares_pkey PRIMARY KEY (id),
+    CONSTRAINT trading_shares_unique UNIQUE (transaction_date, share_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.trading_shares
+    OWNER to admin;
+
+
+CREATE TABLE public.trading_reports
+(
+	id bigint NOT NULL,
+	transaction_date timestamp without time zone,
+	top_10_traded_rise_count integer,
+	top_10_traded_fall_count integer,
+	top_10_turnover_rise_count integer,
+	top_10_turnover_fall_count integer,
+	total_rise_count integer,
+	total_fall_count integer,
+	advance_decline_line integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT trading_eports_pkey PRIMARY KEY (id),
+    CONSTRAINT trading_reports_fkey UNIQUE (transaction_date)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.trading_reports 
+    OWNER to admin;
 
 
 CREATE TABLE public.trading_shares_reports 

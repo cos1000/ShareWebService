@@ -30,5 +30,11 @@
 	<beans:bean id="tradingShareService" class="com.mensa.sharewebservice.service.TradingShareServiceImpl">
 		<beans:property name="tradingShareHandler" ref="tradingShareHandler"></beans:property>
 	</beans:bean>
+        
+	<beans:bean id="dateMasterHandler" class="com.mensa.sharewebservice.dao.DateMasterHandler">
+	</beans:bean>
+	<beans:bean id="dateMasterService" class="com.mensa.sharewebservice.service.DateMasterServiceImpl">
+		<beans:property name="tradingShareHandler" ref="dateMasterHandler"></beans:property>
+	</beans:bean>
 	<context:component-scan base-package="com.mensa.sharewebservice" />
 </beans:beans>

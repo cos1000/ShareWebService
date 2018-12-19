@@ -131,4 +131,9 @@ public class TradingIndexHandler  implements IHandler<TradingIndex> {
         return true; 
     }
     
+    public Long GetNoOfRecord(TradingIndex record) {
+        String sql = "select count(record.transaction_date) from TradingIndex record where record.transaction_date <= :transaction_date and record.index = :index";
+        return (Long) handler.GetQuery(sql).setParameter("transaction_date", record.getTransaction_date()).setParameter("index", record.getIndex()).getSingleResult(); 
+    }
+    
 }

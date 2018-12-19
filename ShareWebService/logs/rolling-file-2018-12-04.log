@@ -1,0 +1,60 @@
+[INFO ] 2018-12-04 21:01:18.188 [Thread-1] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:02:51.200 [Thread-1] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:05:09.400 [Thread-1] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:05:40.678 [main] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:05:40.681 [main] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:05:40.868 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: org.hibernate.share.jpa
+	...]
+[INFO ] 2018-12-04 21:05:40.947 [main] Version - HHH000412: Hibernate Core {5.3.5.Final}
+[INFO ] 2018-12-04 21:05:40.950 [main] Environment - HHH000206: hibernate.properties not found
+[INFO ] 2018-12-04 21:05:41.130 [main] Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[WARN ] 2018-12-04 21:05:41.449 [main] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2018-12-04 21:05:41.458 [main] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/share_trading]
+[INFO ] 2018-12-04 21:05:41.458 [main] pooling - HHH10001001: Connection properties: {user=admin, password=****}
+[INFO ] 2018-12-04 21:05:41.458 [main] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2018-12-04 21:05:41.461 [main] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 10 (min=1)
+[INFO ] 2018-12-04 21:05:41.583 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+[INFO ] 2018-12-04 21:05:41.736 [main] LobCreatorBuilderImpl - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+[INFO ] 2018-12-04 21:05:41.742 [main] BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1c12c7a
+[INFO ] 2018-12-04 21:05:42.457 [main] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@169be09] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2018-12-04 21:06:02.411 [main] BulkInsertApplication - Starting bulk insert - C:\Matt\Development\Shares\2011\d111124e.txt
+[INFO ] 2018-12-04 21:06:04.042 [main] QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ] 2018-12-04 21:06:46.924 [main] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:06:46.926 [main] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:06:47.102 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: org.hibernate.share.jpa
+	...]
+[INFO ] 2018-12-04 21:06:47.175 [main] Version - HHH000412: Hibernate Core {5.3.5.Final}
+[INFO ] 2018-12-04 21:06:47.177 [main] Environment - HHH000206: hibernate.properties not found
+[INFO ] 2018-12-04 21:06:47.350 [main] Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[WARN ] 2018-12-04 21:06:47.664 [main] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2018-12-04 21:06:47.670 [main] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/share_trading]
+[INFO ] 2018-12-04 21:06:47.670 [main] pooling - HHH10001001: Connection properties: {user=admin, password=****}
+[INFO ] 2018-12-04 21:06:47.671 [main] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2018-12-04 21:06:47.674 [main] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 10 (min=1)
+[INFO ] 2018-12-04 21:06:47.784 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+[INFO ] 2018-12-04 21:06:47.932 [main] LobCreatorBuilderImpl - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+[INFO ] 2018-12-04 21:06:47.939 [main] BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@18255aa
+[INFO ] 2018-12-04 21:06:48.646 [main] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@169be09] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2018-12-04 21:06:48.782 [main] BulkInsertApplication - Starting bulk insert - C:\Matt\Development\Shares\2011\d111124e.txt
+[INFO ] 2018-12-04 21:06:55.780 [main] QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ] 2018-12-04 21:10:58.129 [main] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:10:58.131 [main] BulkInsertApplication - 2011-11-24T00:00
+[INFO ] 2018-12-04 21:10:58.299 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: org.hibernate.share.jpa
+	...]
+[INFO ] 2018-12-04 21:10:58.374 [main] Version - HHH000412: Hibernate Core {5.3.5.Final}
+[INFO ] 2018-12-04 21:10:58.376 [main] Environment - HHH000206: hibernate.properties not found
+[INFO ] 2018-12-04 21:10:58.556 [main] Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[WARN ] 2018-12-04 21:10:58.872 [main] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2018-12-04 21:10:58.877 [main] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/share_trading]
+[INFO ] 2018-12-04 21:10:58.877 [main] pooling - HHH10001001: Connection properties: {user=admin, password=****}
+[INFO ] 2018-12-04 21:10:58.877 [main] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2018-12-04 21:10:58.880 [main] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 10 (min=1)
+[INFO ] 2018-12-04 21:10:59.001 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+[INFO ] 2018-12-04 21:10:59.155 [main] LobCreatorBuilderImpl - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+[INFO ] 2018-12-04 21:10:59.161 [main] BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@18255aa
+[INFO ] 2018-12-04 21:10:59.884 [main] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@169be09] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2018-12-04 21:11:00.026 [main] BulkInsertApplication - Starting bulk insert - C:\Matt\Development\Shares\2011\d111124e.txt
+[INFO ] 2018-12-04 21:11:00.049 [main] QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory

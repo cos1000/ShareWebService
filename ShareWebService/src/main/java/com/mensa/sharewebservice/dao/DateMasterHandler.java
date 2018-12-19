@@ -84,6 +84,14 @@ public class DateMasterHandler  implements IHandler<DateMaster> {
         return handler.Delete(record); 
     }
     
+    public DateMaster GetMax() {
+        String sql = "select max(record.date_code) from DateMaster record";
+        LocalDateTime transaction_date = (LocalDateTime) handler.GetQuery(sql).getSingleResult(); 
+        DateMaster record = new DateMaster(); 
+        record.setDate_code(transaction_date);
+        return Get(record); 
+    }
+    
     public boolean BulkInsert(String filename) throws IOException {
         String records = FileHandler.ReadFromFile(filename); 
         StringReader stringReader = new StringReader(records); 
